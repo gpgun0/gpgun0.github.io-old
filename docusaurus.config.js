@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Weekly Atelier",
   tagline: "My Blog",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://gpgun0.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
