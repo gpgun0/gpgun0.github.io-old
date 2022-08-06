@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweeklyatelier=self.webpackChunkweeklyatelier||[]).push([[945],{6945:function(e,k,l){l.r(k)}}]);

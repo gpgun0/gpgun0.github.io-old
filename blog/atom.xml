@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gpgun0.github.io/blog</id>
-    <title>Weekly Atelier Blog</title>
-    <updated>2022-06-15T00:00:00.000Z</updated>
+    <title>Daily Atelier Blog</title>
+    <updated>2022-08-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://gpgun0.github.io/blog"/>
-    <subtitle>Weekly Atelier Blog</subtitle>
+    <subtitle>Daily Atelier Blog</subtitle>
     <icon>https://gpgun0.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[웹팩]]></title>
+        <id>웹팩</id>
+        <link href="https://gpgun0.github.io/blog/웹팩"/>
+        <updated>2022-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[gpgun0's blog]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreferrer">Webpack</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="concetps">Concetps<a class="hash-link" href="#concetps" title="제목으로 바로 가기">​</a></h2><p>웹팩: 정적 모듈 번들러
+웹팩이 app을 처리할 때, 내부적으로 하나 이상의 entry points로부터 파생된 dependency graph를 만들고 필요한 모든 모듈들을 하나 이상의 번들로 결합시킨다.</p><p>Core Concepts</p><ul><li><p>Entry</p></li><li><p>Output</p></li><li><p>Loaders</p></li><li><p>Plugins</p></li><li><p>Mode</p></li><li><p>Browser Compatibility</p></li><li><p><code>2019-05-30-welcome.md</code></p></li><li><p><code>2019-05-30-welcome/index.md</code></p></li></ul><p>A blog post folder can be convenient to co-locate blog post images:</p><p>The blog supports tags as well!</p><p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
+        <author>
+            <name>gpgun0</name>
+            <uri>https://github.com/gpgun0</uri>
+        </author>
+        <category label="webpack" term="webpack"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
@@ -15,7 +29,7 @@
         <summary type="html"><![CDATA[gpgun0's blog]]></summary>
         <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p><p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p><p>Regular blog authors can be added to <code>authors.yml</code>.</p><p>The blog post date can be extracted from filenames, such as:</p><ul><li><code>2019-05-30-welcome.md</code></li><li><code>2019-05-30-welcome/index.md</code></li></ul><p>A blog post folder can be convenient to co-locate blog post images:</p><p>The blog supports tags as well!</p><p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
         <author>
-            <name>gugun0</name>
+            <name>gpgun0</name>
             <uri>https://github.com/gpgun0</uri>
         </author>
         <category label="blog" term="blog"/>
