@@ -1,15 +1,9 @@
 import React from "react";
-import LayoutProvider from "@theme/LayoutProviders";
-import NavBar from "@theme/Navbar";
+import HomepageFeatures from "../components/HomepageFeatures";
+import Layout from "@theme/Layout";
 
-import Footer from "@theme/Footer";
 const Home = (): JSX.Element => {
-  return (
-    <LayoutProvider>
-      <NavBar />
-      <Footer />
-    </LayoutProvider>
-  );
+  return <Layout></Layout>;
 };
 
 export default Home;

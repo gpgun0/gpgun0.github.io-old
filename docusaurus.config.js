@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Weekly Atelier",
+  title: "Daily Atelier",
   tagline: "My Blog",
   url: "https://gpgun0.github.io",
   baseUrl: "/",
@@ -32,10 +32,9 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
         blog: {
           routeBasePath: "blog",
-          blogTitle: "주간 공방",
+          blogTitle: "하루 공방",
           blogDescription: "blog",
           showReadingTime: true,
           // Please change this to your repo.
@@ -43,6 +42,14 @@ const config = {
           blogSidebarTitle: "최근 포스트",
           blogSidebarCount: 0,
           blogListComponent: "@theme/BlogListPage",
+        },
+        docs: {
+          routeBasePath: "lecture-note",
+          sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -55,7 +62,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "My Site",
+        title: "하루 공방",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
@@ -63,8 +70,20 @@ const config = {
         items: [
           { to: "/blog", label: "Blog", position: "left" },
           {
+            to: "/blog/tags",
+            activeBasePath: "/tags",
+            label: "Tags",
+            position: "left",
+          },
+          {
+            type: "doc",
+            docId: "Lecture Note",
+            label: "Lecture Note",
+            position: "left",
+          },
+          {
             href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
+            label: "Docusaurus",
             position: "right",
           },
         ],
@@ -112,11 +131,20 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Weekly Atelier, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Daily Atelier, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: "TOLDAEFD3H",
+
+        // Public API key: it is safe to commit it
+        apiKey: "3f389919d0396a8bcd996c3b5e841dd5",
+
+        indexName: "daily_atelier",
       },
     }),
 };
