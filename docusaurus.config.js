@@ -138,18 +138,6 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: "TOLDAEFD3H",
-
-        // Public API key: it is safe to commit it
-        apiKey: process.env.ALGOLIA_API_KEY,
-
-        indexName: "daily_atelier",
-
-        // Optional: see doc section below
-        contextualSearch: true,
-      },
     }),
 };
 
