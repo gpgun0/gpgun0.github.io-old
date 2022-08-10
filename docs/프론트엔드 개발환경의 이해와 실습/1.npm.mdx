@@ -1,0 +1,139 @@
+---
+sidebar_position: 1
+---
+
+# NPM
+
+## Node.JS 업그레이드 방법
+
+1. 현재 node 버전 확인
+
+```bash
+node -v
+```
+
+2. npm 캐시 제거
+
+```bash
+npm cache clean -f
+```
+
+3. Node.js 버전 관리 모듈 'n' 설치
+
+```bash
+npm install -g n
+```
+
+4. 원하는 버전 설치
+
+```bash
+n stable    # 안정
+n lts       # Long Term Support
+n latest    # 최신
+n 14.15.4   # Specific
+```
+
+## 프로젝트 초기화
+
+```bash
+npm init
+```
+
+=> package.json이 생성됩니다.
+
+```json
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0"
+  }
+}
+```
+
+scripts에서 명령어를 추가하고 해당 명령어가 실행할 동작을 정의할 수 있습니다.  
+ex) start, build, test, ...
+
+## 유의적 버전과 의존성 관리
+
+유의적 버전: 버전 번호를 관리하기 위한 규칙
+
+export const Highlight = ({ children, color }) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: "20px",
+      color: "#fff",
+      padding: "10px",
+      cursor: "pointer",
+      marginLeft: "5px",
+    }}
+    onClick={() => {
+      if (color === "#da3d5f") {
+        alert("기존 버전과 호환되지 않는 '새로운' 버전");
+      } else if (color === "#25c2a0") {
+        alert("기존 버전과 호환되는 새로운 기능이 추가된 버전");
+      } else if (color === "#1877F2") {
+        alert("기존 버전과 호환되는 버그 및 오타 등이 수정된 버전");
+      }
+    }}
+  >
+    {children}
+  </span>
+);
+
+<Highlight color="#da3d5f">Major</Highlight>
+<Highlight color="#25c2a0">Minor</Highlight>
+<Highlight color="#1877F2">Patch</Highlight>
+<br />
+<br />
+
+### ~(틸트)와 ^(캐럿)을 이용한 버전 범위 명시
+
+#### **틸트**
+
+마이너 버전이 명시되어 있으면, 패치 버전만 업데이트 합니다.  
+`ex) ~0.4.1 -> (0.4.1 <= x < 0.5.0)`
+
+마이너 버전이 명시되어 있지 않으면, 마이너 버전까지 업데이트 합니다.  
+`ex) ~0 -> (0.0.0 <= x < 1.0.0)`
+
+두번째 경우에 마이너 버전 업데이트지만, 하위 호환성이 지켜지지 않는 경우가 있다면 문제가 발생합니다.  
+보통 버전이 1.0.0 미만인 정식 릴리즈 전(pre-release)에는 패키지 버전이 빈번히 업데이트 되고, 하위 호환성을 지키지 않고 배포하는 경우가 있습니다.
+
+#### **캐럿**
+
+정식 버전인 경우 (1.0.0 이상) 패키지 업데이트를 했을 때, Major는 유지하고 Minor와 Patch버전을 가장 최신으로 가져올 수 있습니다.  
+`ex) ^12.14.1 -> (12.14.1 <= x < 13.0.0)`
+
+정식 버전이 아닌 경우 (1.0.0 미만), 다음과 같습니다. (틸트처럼 동작)  
+`ex) ^0.1.2 -> (0.1.2 <= x < 0.2.0)`  
+`ex) ^0 -> (0.0.0 <= x < 1.0.0)` 하위 호환성 문제 발생 (틸트 처럼 마이너가 명시되어 있지 않으면, 마이너 버전까지 업데이트)  
+`ex) ^0.1 -> (0.0.1 <= x < 0.2.0)`  
+`ex) ^0.0.1 -> (x == 0.0.1)`
+
+정식 버전 출시 전엔 마지막 예제처럼 특정 버전을 명시해주는게 안전합니다.
+
+```bash
+npm update (pacakge name)
+```
+
+> 그 전에, package.json에 명시된 버전과 실제 설치된 버전이 다를 수 있는데, 다음과 같은 경로에서
+>
+> ```
+> cat node_modules/(package name)/package.json
+> ```
+>
+> 실제 설치된 버전이 몇인지 확인할 수 있습니다.
+
+## Reference
+
+[Semver Calculator](https://semver.npmjs.com/)
+[npm package.json에서 틸드(~) 대신 캐럿(^) 사용하기](https://blog.outsider.ne.kr/1041)

@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -142,9 +143,12 @@ const config = {
         appId: "TOLDAEFD3H",
 
         // Public API key: it is safe to commit it
-        apiKey: "3f389919d0396a8bcd996c3b5e841dd5",
+        apiKey: process.env.ALGOLIA_API_KEY,
 
         indexName: "daily_atelier",
+
+        // Optional: see doc section below
+        contextualSearch: true,
       },
     }),
 };
